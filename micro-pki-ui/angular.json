@@ -1,0 +1,532 @@
+{
+  "version": 1,
+  "projects": {
+    "certificate-domain": {
+      "projectType": "library",
+      "root": "libs/certificate/domain",
+      "sourceRoot": "libs/certificate/domain/src",
+      "prefix": "certificate",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/certificate/domain"
+          ],
+          "options": {
+            "project": "libs/certificate/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/certificate/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/certificate/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/certificate/domain"
+          ],
+          "options": {
+            "jestConfig": "libs/certificate/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/certificate/domain/src/**/*.ts",
+              "libs/certificate/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:certificate",
+        "type:domain-logic"
+      ]
+    },
+    "certificate-feature-list": {
+      "projectType": "library",
+      "root": "libs/certificate/feature-list",
+      "sourceRoot": "libs/certificate/feature-list/src",
+      "prefix": "certificate",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/certificate/feature-list"
+          ],
+          "options": {
+            "project": "libs/certificate/feature-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/certificate/feature-list/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/certificate/feature-list/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/certificate/feature-list"
+          ],
+          "options": {
+            "jestConfig": "libs/certificate/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/certificate/feature-list/src/**/*.ts",
+              "libs/certificate/feature-list/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:certificate",
+        "type:feature"
+      ]
+    },
+    "certificate-feature-manage": {
+      "projectType": "library",
+      "root": "libs/certificate/feature-manage",
+      "sourceRoot": "libs/certificate/feature-manage/src",
+      "prefix": "certificate",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/certificate/feature-manage"
+          ],
+          "options": {
+            "project": "libs/certificate/feature-manage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/certificate/feature-manage/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/certificate/feature-manage/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/certificate/feature-manage"
+          ],
+          "options": {
+            "jestConfig": "libs/certificate/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/certificate/feature-manage/src/**/*.ts",
+              "libs/certificate/feature-manage/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:certificate",
+        "type:feature"
+      ]
+    },
+    "certificate-feature-search": {
+      "projectType": "library",
+      "root": "libs/certificate/feature-search",
+      "sourceRoot": "libs/certificate/feature-search/src",
+      "prefix": "certificate",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/certificate/feature-search"
+          ],
+          "options": {
+            "project": "libs/certificate/feature-search/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/certificate/feature-search/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/certificate/feature-search/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/certificate/feature-search"
+          ],
+          "options": {
+            "jestConfig": "libs/certificate/feature-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/certificate/feature-search/src/**/*.ts",
+              "libs/certificate/feature-search/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:certificate",
+        "type:feature"
+      ]
+    },
+    "csr-domain": {
+      "projectType": "library",
+      "root": "libs/csr/domain",
+      "sourceRoot": "libs/csr/domain/src",
+      "prefix": "csr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/csr/domain"
+          ],
+          "options": {
+            "project": "libs/csr/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/csr/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/csr/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/csr/domain"
+          ],
+          "options": {
+            "jestConfig": "libs/csr/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/csr/domain/src/**/*.ts",
+              "libs/csr/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:csr",
+        "type:domain-logic"
+      ]
+    },
+    "csr-feature-list": {
+      "projectType": "library",
+      "root": "libs/csr/feature-list",
+      "sourceRoot": "libs/csr/feature-list/src",
+      "prefix": "csr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/csr/feature-list"
+          ],
+          "options": {
+            "project": "libs/csr/feature-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/csr/feature-list/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/csr/feature-list/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/csr/feature-list"
+          ],
+          "options": {
+            "jestConfig": "libs/csr/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/csr/feature-list/src/**/*.ts",
+              "libs/csr/feature-list/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:csr",
+        "type:feature"
+      ]
+    },
+    "csr-feature-manage": {
+      "projectType": "library",
+      "root": "libs/csr/feature-manage",
+      "sourceRoot": "libs/csr/feature-manage/src",
+      "prefix": "csr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/csr/feature-manage"
+          ],
+          "options": {
+            "project": "libs/csr/feature-manage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/csr/feature-manage/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/csr/feature-manage/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/csr/feature-manage"
+          ],
+          "options": {
+            "jestConfig": "libs/csr/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/csr/feature-manage/src/**/*.ts",
+              "libs/csr/feature-manage/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:csr",
+        "type:feature"
+      ]
+    },
+    "csr-feature-upload": {
+      "projectType": "library",
+      "root": "libs/csr/feature-upload",
+      "sourceRoot": "libs/csr/feature-upload/src",
+      "prefix": "csr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/csr/feature-upload"
+          ],
+          "options": {
+            "project": "libs/csr/feature-upload/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/csr/feature-upload/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/csr/feature-upload/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/csr/feature-upload"
+          ],
+          "options": {
+            "jestConfig": "libs/csr/feature-upload/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/csr/feature-upload/src/**/*.ts",
+              "libs/csr/feature-upload/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": [
+        "domain:csr",
+        "type:feature"
+      ]
+    },
+    "micro-pki-ui": {
+      "projectType": "application",
+      "root": "apps/micro-pki-ui",
+      "sourceRoot": "apps/micro-pki-ui/src",
+      "prefix": "micro-pki-ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/micro-pki-ui",
+            "index": "apps/micro-pki-ui/src/index.html",
+            "main": "apps/micro-pki-ui/src/main.ts",
+            "polyfills": "apps/micro-pki-ui/src/polyfills.ts",
+            "tsConfig": "apps/micro-pki-ui/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/micro-pki-ui/src/favicon.ico",
+              "apps/micro-pki-ui/src/assets"
+            ],
+            "styles": [
+              "apps/micro-pki-ui/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/micro-pki-ui/src/environments/environment.ts",
+                  "with": "apps/micro-pki-ui/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "micro-pki-ui:build:production"
+            },
+            "development": {
+              "browserTarget": "micro-pki-ui:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "micro-pki-ui:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/micro-pki-ui/src/**/*.ts",
+              "apps/micro-pki-ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/micro-pki-ui"
+          ],
+          "options": {
+            "jestConfig": "apps/micro-pki-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "micro-pki-ui-e2e": {
+      "root": "apps/micro-pki-ui-e2e",
+      "sourceRoot": "apps/micro-pki-ui-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/micro-pki-ui-e2e/cypress.json",
+            "devServerTarget": "micro-pki-ui:serve:development",
+            "tsConfig": "apps/micro-pki-ui-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "micro-pki-ui:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "apps/micro-pki-ui-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "micro-pki-ui"
+      ]
+    }
+  }
+}

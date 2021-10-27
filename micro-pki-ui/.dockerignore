@@ -1,0 +1,9 @@
+
+.git
+.gitignore
+.idea
+.gradle
+node_modules
+**/node_modules
+node_modules/**
+Dockerfile
