@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@micro-pki-ui/certificate/domain": [
+        "libs/certificate/domain/src/index.ts"
+      ],
+      "@micro-pki-ui/certificate/feature-list": [
+        "libs/certificate/feature-list/src/index.ts"
+      ],
+      "@micro-pki-ui/certificate/feature-manage": [
+        "libs/certificate/feature-manage/src/index.ts"
+      ],
+      "@micro-pki-ui/certificate/feature-search": [
+        "libs/certificate/feature-search/src/index.ts"
+      ],
+      "@micro-pki-ui/csr/domain": ["libs/csr/domain/src/index.ts"],
+      "@micro-pki-ui/csr/feature-list": ["libs/csr/feature-list/src/index.ts"],
+      "@micro-pki-ui/csr/feature-manage": [
+        "libs/csr/feature-manage/src/index.ts"
+      ],
+      "@micro-pki-ui/csr/feature-upload": [
+        "libs/csr/feature-upload/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,10 @@
+<h1>csr-upload</h1>
+
+<table class="table">
+  <tr *ngFor="let csr of csrList$ | async">
+    <td>{{csr.id}}</td>
+    <td>{{csr.name}}</td>
+    <td>{{csr.description}}</td>
+  </tr>
+</table>
+
