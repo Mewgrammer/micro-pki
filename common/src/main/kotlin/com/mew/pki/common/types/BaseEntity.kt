@@ -1,4 +1,4 @@
-package com.mew.pki.auth.data.entities
+package com.mew.pki.common.types
 
 import org.springframework.data.domain.Persistable
 import java.util.*

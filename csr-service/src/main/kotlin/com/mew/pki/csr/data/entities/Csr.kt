@@ -1,15 +1,17 @@
-package com.mew.pki.auth.data.entities
+package com.mew.pki.csr.data.entities
 
 import com.mew.pki.common.types.BaseEntity
 import org.springframework.data.annotation.CreatedDate
+import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Table
 
 @Entity
-@Table(name="role")
-class Role(
+@Table(name="csr")
+class Csr(
     id: UUID? = null,
-    val name: String,
+    val csr: String,
     @CreatedDate val createdAt: Date,
+    @LastModifiedDate val updatedAt: Date,
     ) : BaseEntity(id)

@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+
+  auth-db:
+    container_name: pg_auth
+    profiles: [ "db" ]
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: auth
+    ports:
+      - "5430:5432"
+
+  csr-db:
+    container_name: pg_ca
+    profiles: [ "db" ]
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: csr
+    ports:
+      - "5431:5432"
+
+  pgadmin:
+    container_name: pgadmin
+    profiles: [ "db" ]
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "8080:80"

@@ -1,2 +1,2 @@
 rootProject.name = "micro-pki"
-include("auth-service", "eureka-server")
+include("common", "auth-service", "csr-service", "eureka-server")
