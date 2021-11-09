@@ -7,8 +7,8 @@ services:
       - "5672:5672"
       - "15672:15672"
     volumes:
-      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+      - rabbit-data:/var/lib/rabbitmq/
+      - rabbit-log:/var/log/rabbitmq
 
   auth-db:
     container_name: pg_auth
@@ -21,6 +21,9 @@ services:
       POSTGRES_DB: auth
     ports:
       - "5430:5432"
+    volumes:
+      - auth-pg:/var/lib/postgresql/data
+
 
   csr-db:
     container_name: pg_ca
@@ -33,6 +36,43 @@ services:
       POSTGRES_DB: csr
     ports:
       - "5431:5432"
+    volumes:
+      - csr-pg:/var/lib/postgresql/data
+
+  keycloak:
+    image: jboss/keycloak:4.8.3.Final
+    restart: on-failure
+    command:
+      - "-b"
+      - "0.0.0.0"
+      - "-Dkeycloak.migration.action=import"
+      - "-Dkeycloak.migration.provider=dir"
+      - "-Dkeycloak.migration.dir=/config/"
+      - "-Dkeycloak.migration.strategy=IGNORE_EXISTING"
+    volumes:
+      - ./config:/config/
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - DB_VENDOR=postgres
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - DB_ADDR=keycloak-db
+      - DB_PORT=5432
+      - DB_DATABASE=keycloak
+    ports:
+      - "8180:8080"
+    depends_on:
+      - keycloak-db
+
+  keycloak-db:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: keycloak
+    volumes:
+      - keycloak-pg:/var/lib/postgresql/data
 
   pgadmin:
     container_name: pgadmin
@@ -44,3 +84,15 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "8080:80"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+
+
+volumes:
+  keycloak-pg:
+  auth-pg:
+  csr-pg:
+  pgadmin:
+  rabbit-data:
+  rabbit-log:
+

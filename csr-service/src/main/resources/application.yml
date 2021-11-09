@@ -17,7 +17,8 @@ spring:
     password: "root"
   security:
     user:
-      password: "foo"
+      username: "root"
+      password: "root"
 logging:
   level:
     org:

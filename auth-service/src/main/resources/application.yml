@@ -17,8 +17,18 @@ spring:
     password: "root"
   security:
     user:
-      password: "foo"
+      username: "root"
+      password: "root"
+keycloak:
+  auth-server-url: "http://localhost:8180/auth"
+  realm: "micro-pki"
+  resource: "auth-app"
+  public-client: true
+  principal-attribute: "preferred_username"
 logging:
   level:
     org:
       springframework: ERROR
+devtools:
+  restart:
+    enabled: true

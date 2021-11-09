@@ -10,5 +10,5 @@ RUN gradle :eureka-server:build --stacktrace --no-daemon
 FROM openjdk:11-jre-slim
 WORKDIR /app
 EXPOSE 8761
-COPY --from=builder /builder/eureka-server/build/libs/eureka-server-1.0.0.jar .
-CMD ["java", "-jar", "eureka-server-1.0.0.jar"]
+COPY --from=builder /builder/eureka-server/build/libs/eureka-server-0.0.1.jar .
+CMD ["java", "-jar", "eureka-server-0.0.1.jar"]

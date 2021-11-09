@@ -10,5 +10,5 @@ RUN gradle :csr-service:build --stacktrace --no-daemon
 FROM openjdk:11-jre-slim
 WORKDIR /app
 EXPOSE 8761
-COPY --from=builder /builder/csr-service/build/libs/csr-service-1.0.0.jar .
-CMD ["java", "-jar", "csr-service-1.0.0.jar"]
+COPY --from=builder /builder/csr-service/build/libs/csr-service-0.0.1.jar .
+CMD ["java", "-jar", "csr-service-0.0.1.jar"]

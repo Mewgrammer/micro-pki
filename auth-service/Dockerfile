@@ -10,5 +10,5 @@ RUN gradle :auth-service:build --stacktrace --no-daemon
 FROM openjdk:11-jre-slim
 WORKDIR /app
 EXPOSE 8761
-COPY --from=builder /builder/auth-service/build/libs/auth-service-1.0.0.jar .
-CMD ["java", "-jar", "auth-service-1.0.0.jar"]
+COPY --from=builder /builder/auth-service/build/libs/auth-service-0.0.1.jar .
+CMD ["java", "-jar", "auth-service-0.0.1.jar"]
