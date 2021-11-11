@@ -1,4 +1,4 @@
-package com.mew.pki.csr.dto
+package com.mew.pki.csr.dto.request
 
 import com.mew.pki.common.annotations.NoArg
 import javax.validation.constraints.NotBlank
@@ -8,5 +8,6 @@ import javax.validation.constraints.NotNull
 class CreateCsrDto(
     @NotNull
     @NotBlank
-    var csr: String,
+    val csr: String,
+    val comment: String
 );

@@ -8,10 +8,18 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 @Entity
-@Table(name="csr")
+@Table(name = "csr")
 class Csr(
     id: UUID? = null,
     val csr: String,
-    @CreatedDate val createdAt: Date,
-    @LastModifiedDate val updatedAt: Date,
-    ) : BaseEntity(id)
+    val comment: String,
+    val subject: String,
+    val publicKey: String,
+) : BaseEntity(id) {
+    @CreatedDate
+    var createdAt: Date? = null
+
+    @LastModifiedDate
+    var updatedAt: Date? = null
+
+}

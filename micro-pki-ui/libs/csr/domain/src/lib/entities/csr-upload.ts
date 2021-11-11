@@ -1,5 +1,4 @@
-export interface Csr {
-    id: string;
+export interface CsrUpload {
     csr: string;
     comment: string;
 }

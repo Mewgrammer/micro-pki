@@ -2,38 +2,36 @@ package com.mew.pki.csr.services
 
 import com.mew.pki.csr.data.entities.Csr
 import com.mew.pki.csr.data.repositories.CsrRepository
-import com.mew.pki.csr.dto.CsrDto
-import org.modelmapper.ModelMapper
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.HttpStatus
+import com.mew.pki.csr.dto.request.CreateCsrDto
+import com.mew.pki.csr.dto.request.PaginationDto
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
-import org.springframework.web.server.ResponseStatusException
 import java.util.*
 
 @Service
-class CsrService {
+class CsrService(val repository: CsrRepository) {
 
-    @Autowired
-    lateinit var mapper: ModelMapper;
-
-    @Autowired
-    lateinit var repository: CsrRepository;
-
-    fun findAll(): List<CsrDto> {
-        return repository.findAll().map { c -> mapper.map(c, CsrDto::class.java) };
+    fun findAll(pagination: PaginationDto): Iterable<Csr> {
+        return repository.findAll(
+            PageRequest.of(pagination.page, pagination.limit).withSort(pagination.sort, pagination.sortBy)
+        );
     }
 
-    fun findByCsr(csr: String): CsrDto {
-        val match = repository.findByCsr(csr) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "CSR not found");
-        return mapper.map(match, CsrDto::class.java);
+    fun findByCsr(csr: String): Csr? {
+        return repository.findByCsr(csr);
     }
 
-    fun createCsr(csrDto: CsrDto): CsrDto {
-        val csr = mapper.map(csrDto, Csr::class.java);
-        return mapper.map(repository.save(csr), CsrDto::class.java);
+    fun createCsr(csrDto: CreateCsrDto): Csr {
+        val csr = Csr(csr = csrDto.csr, comment = "", subject = "", publicKey = "");
+        return repository.save(csr);
     }
 
-    fun deleteCsr(id: UUID) {
+    fun deleteCsrById(id: UUID) {
         return repository.deleteById(id);
+    }
+
+    fun findById(id: UUID): Csr? {
+        val csr = repository.findById(id);
+        return if (csr.isPresent) csr.get() else null;
     }
 }

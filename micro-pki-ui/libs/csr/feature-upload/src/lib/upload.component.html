@@ -1,10 +1,17 @@
-<h1>csr-upload</h1>
+<h1>CSR Upload</h1>
 
-<table class="table">
-  <tr *ngFor="let csr of csrList$ | async">
-    <td>{{csr.id}}</td>
-    <td>{{csr.name}}</td>
-    <td>{{csr.description}}</td>
-  </tr>
-</table>
+<form fxLayout="column" [formGroup]="uploadForm" (ngSubmit)="uploadCsr()">
+  <mat-form-field appearance="fill">
+    <mat-label>Comment</mat-label>
+    <input matInput formControlName="comment" placeholder="Please enter a comment">
+  </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>CSR Base64 PEM</mat-label>
+    <textarea matInput formControlName="csr" placeholder="Enter CSR in Base64 PEM Format"></textarea>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="uploadForm.invalid" mat-flat-button color="primary">
+    Upload CSR
+  </button>
+</form>

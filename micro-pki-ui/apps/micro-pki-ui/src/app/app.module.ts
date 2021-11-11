@@ -11,21 +11,35 @@ import { CertificateFeatureManageModule } from '@micro-pki-ui/certificate/featur
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { AppRoutingRoutingModule } from './app-routing-routing.module';
+import { CsrPageComponent } from './pages/csr/csr-page.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CsrPageComponent],
   imports: [
+    AppRoutingRoutingModule,
     MatSidenavModule,
     FlexLayoutModule,
     BrowserModule,
     CsrFeatureUploadModule,
     HttpClientModule,
     CsrFeatureListModule,
+    CsrFeatureUploadModule,
     CsrFeatureManageModule,
     CertificateFeatureListModule,
     CertificateFeatureSearchModule,
     CertificateFeatureManageModule,
     BrowserAnimationsModule,
+    MatListModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

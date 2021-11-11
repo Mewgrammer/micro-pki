@@ -1,16 +1,20 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button  (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
     </button>
+    <span>Micro-PKI</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="page-content" autosize hasBackdrop="false">
+  <mat-drawer #drawer class="sidenav" mode="over">
+    <mat-list>
+      <mat-list-item>
+        <a href="csr" mat-button fxFlex>
+          CSR
+        </a>
+      </mat-list-item>
+    </mat-list>
   </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-
+  <router-outlet></router-outlet>
 </mat-drawer-container>

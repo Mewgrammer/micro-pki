@@ -1,28 +1,26 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
-import {Csr} from '../entities/csr';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { Csr } from '../entities/csr';
+import type { CsrUpload } from '../entities/csr-upload';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class CsrDataService {
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    load(): Observable<Csr[]> {
+  load(): Observable<Csr[]> {
 
-        // Uncomment if needed
-        /*
-        const url = '...';
-        const params = new HttpParams().set('param', 'value');
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-        return this.http.get<Csr[]>(url, {params, headers});
-        */
-        
-        return of([
-            {id: 1, name: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet'},
-            {id: 2, name: 'At vero eos', description: 'At vero eos et accusam et justo duo dolores'},
-            {id: 3, name: 'Duis autem', description: 'Duis autem vel eum iriure dolor in hendrerit'},
-        ]);
-      }
+    return of([
+      {id: "", csr: 'Lorem ipsum', comment: 'Lorem ipsum dolor sit amet'},
+      {id: "2", csr: 'At vero eos', comment: 'At vero eos et accusam et justo duo dolores'},
+      {id: "3", csr: 'Duis autem', comment: 'Duis autem vel eum iriure dolor in hendrerit'},
+    ]);
+  }
+
+  push(csr: CsrUpload): Observable<Csr> {
+    const url = 'http://localhost:5001/api/v1/csr';
+    return this.http.post<Csr>(url, csr);
+  }
 }
